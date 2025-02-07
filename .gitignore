@@ -1,0 +1,22 @@
+# Ignore Node.js dependencies
+node_modules/
+dist/
+.vite/
+
+# Ignore Python dependencies
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore environment files
+.env
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore logs and caches
+*.log
+*.sqlite3

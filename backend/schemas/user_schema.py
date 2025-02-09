@@ -5,4 +5,3 @@ class UserSchema(BaseModel):
     email: str
     id: int
     hashed_password: str
-    is_active: bool

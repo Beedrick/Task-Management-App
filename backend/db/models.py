@@ -17,7 +17,7 @@ class User(Base):
 class Task(Base):
     __tablename__ = "tasks"
     
-    id = Column(Integer, primary_key=True, index=True)
+    id = Column(Integer, primary_key=True, index=True, unique=True, autoincrement=True)
     title = Column(String)
     description = Column(String)
     progress = Column(String)
@@ -26,6 +26,6 @@ class Task(Base):
     due_date = Column(DateTime)
     completed = Column(Boolean, default=False)
     owner_id = Column(Integer, ForeignKey('users.id'))  # Foreign key to User.id
-    
+
     # Define a relationship to the User class
     owner = relationship("User", back_populates="tasks")

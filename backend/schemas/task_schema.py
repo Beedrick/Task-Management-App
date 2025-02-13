@@ -4,9 +4,10 @@ from datetime import datetime
 class CreateNewTaskSchema(BaseModel):
     title: str
     description: str
-    progress: str
-    priority: str
+    deadline: datetime
+    urgency: str
     category: str
-    due_date: datetime
+    importance: int
+
     completed: bool
     owner_id: int

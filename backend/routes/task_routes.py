@@ -19,4 +19,4 @@ router = APIRouter()
 
 @router.post('/tasks/createNewTask')
 def create_task(task: CreateNewTaskSchema, db: Session = Depends(get_db)):
-    return task_services.create_new_task(db, task.title, task.description, task.progress, task.priority, task.category, task.due_date, task.owner_id)
+    return task_services.create_new_task(db, task.title, task.description, task.deadline, task.urgency, task.category, task.importance, task.completed, task.owner_id)

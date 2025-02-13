@@ -20,11 +20,12 @@ class Task(Base):
     id = Column(Integer, primary_key=True, index=True, unique=True, autoincrement=True)
     title = Column(String)
     description = Column(String)
-    progress = Column(String)
-    priority = Column(String)
-    category = Column(String)
-    due_date = Column(DateTime)
-    completed = Column(Boolean, default=False)
+    deadline = Column(DateTime)
+    urgency = Column(String)  # High, Medium, Low
+    category = Column(String) # Work, Personal, Study, etc.
+    importance = Column(Integer) # 1 to 10
+
+    completed = Column(Boolean)
     owner_id = Column(Integer, ForeignKey('users.id'))  # Foreign key to User.id
     username = Column(String) # The user who created the task
 

@@ -15,6 +15,10 @@ def create_new_user(db: Session, username: str, email: str, password: str):
     db.refresh(user)
     return user
 
+
+
+
+
 def update_username(db: Session, user_id: int, username: str):
     # this line queries the db for the user with the id that matches the user_id passed in
     user = db.query(User).filter(User.id == user_id).first()

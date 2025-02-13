@@ -26,6 +26,7 @@ class Task(Base):
     due_date = Column(DateTime)
     completed = Column(Boolean, default=False)
     owner_id = Column(Integer, ForeignKey('users.id'))  # Foreign key to User.id
+    username = Column(String) # The user who created the task
 
     # Define a relationship to the User class
     owner = relationship("User", back_populates="tasks")
